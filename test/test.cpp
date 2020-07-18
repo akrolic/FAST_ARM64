@@ -42,7 +42,7 @@ int main (int argc, char * argv[]) {
    for (int i = 0; i < n_trials; ++i) {
      corners.clear();
       double t = (double)cv::getTickCount();
-      fast::fast_corner_detect_10_neon((fast::fast_byte *)(img.data), img.cols, img.rows, img.cols, 75, corners);
+      fast::fast_corner_detect_10((fast::fast_byte *)(img.data), img.cols, img.rows, img.cols, 75, corners);
       time_accumulator +=  ((cv::getTickCount() - t) / cv::getTickFrequency());
    }
    printf("Modified ARM version took %f ms (average over %d trials).\n", time_accumulator/((double)n_trials)*1000.0, n_trials);
