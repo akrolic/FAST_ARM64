@@ -28,6 +28,12 @@ EDIT LINE 10 with path to image in <yourpath>/data/test1.png
 
 g++ -I/usr/local/include/opencv -I/usr/local/include/opencv2 -I/usr/local/include/fast -L/usr/local/lib/ -g -o testyboy  test.cpp -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_ml -lopencv_video -lopencv_features2d -lopencv_calib3d -lopencv_objdetect -lopencv_stitching -lopencv_imgcodecs -lfast
 
+note if you installed your own opencv from source (presumably people following the GAAS project would have done this) 
+
+I ran into this issue: https://github.com/cggos/dip_cvqt/issues/1 
+
+After following the steps for creating a .conf file I was able to run </sudo ldconfig -v> and my opencv_core was able to link with the shared libraries directory
+
 chmod +x testyboy
 
 ./testyboy
