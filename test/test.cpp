@@ -2,12 +2,12 @@
 #include <iostream>
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
-#include <fast/fast.h>
+#include "fast.h"
 
 int main (int argc, char * argv[]) {
    const int n_trials = 1000;
    std::vector<fast::fast_xy> corners;
-   cv::Mat img = cv::imread(std::string(TEST_DATA_DIR) + "/test1.png", 0);
+   cv::Mat img = cv::imread("/mnt/mmcblk2p1/GAAS/software/SLAM/ygz_slam_ros/Thirdparty/fast/test/data/test1.png", 0);
    cv::Mat downSampled; 
    cv::resize(img, downSampled, cv::Size(752, 480));
    img = downSampled;
